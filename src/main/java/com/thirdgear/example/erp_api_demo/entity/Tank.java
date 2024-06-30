@@ -1,10 +1,16 @@
 package com.thirdgear.example.erp_api_demo.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import java.time.Instant;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 
 @Entity
@@ -13,8 +19,19 @@ public class Tank{
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    public Long id;
 	
-	private String name;
+	public  String name;
 	
+	@CreationTimestamp
+	@Column(name="created_at")
+	public Instant createdAt;
+	
+	@UpdateTimestamp
+	@Column(name="updated_at")
+	public Instant updatedAt;
+	
+	public String toString() {
+    	return "Tank: "+ this.name;
+    }
 }

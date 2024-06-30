@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 import com.thirdgear.example.erp_api_demo.entity.WorkOrder;
 
-@Service("WorkOrder")
+@Service
 public interface WorkOrderService{
 	
 	public Iterable<WorkOrder>getWorkOrders();
