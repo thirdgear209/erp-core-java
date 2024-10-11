@@ -8,4 +8,5 @@ import com.thirdgear.example.erp_api_demo.entity.OperationCode;
 public interface OperationCodeService{
 
     public Iterable<OperationCode>getOperationCodes();
+    
 }

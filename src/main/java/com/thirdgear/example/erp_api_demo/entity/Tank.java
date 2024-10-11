@@ -31,6 +31,16 @@ public class Tank{
 	@Column(name="updated_at")
 	public Instant updatedAt;
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
 	public String toString() {
     	return "Tank: "+ this.name;
     }
